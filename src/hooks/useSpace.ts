@@ -7,7 +7,7 @@ export const useSpaces = () =>
   useQuery({
     queryKey: ["spaces"],
     queryFn: async () => {
-      const { data } = await axios.get(`${API_URL}/data.json`);
+      const { data } = await axios.get(`${API_URL}`);
       return data.data;
     },
   });
