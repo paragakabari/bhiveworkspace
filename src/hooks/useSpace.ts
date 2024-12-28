@@ -17,7 +17,7 @@ export const useSpaceDetails = (spaceId: string) =>
     queryKey: ["spaceDetails", spaceId],
     queryFn: async () => {
       const { data } = await axios.get(`${API_URL}/${spaceId}`);
-      return data.data;
+      return data;
     },
     enabled: !!spaceId,
   });

@@ -52,7 +52,6 @@ const SpaceCard = ({ space }: SpaceCardProps) => {
 
         <div className="sideBox" onClick={redirectToMap}>
           <img src={AssIcon} alt="AssIcon" />
-          <p>{space.day_pass_price}</p>
         </div>
       </div>
 
