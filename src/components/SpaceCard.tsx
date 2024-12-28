@@ -5,8 +5,8 @@ import RightArrow from "../assets/icons/right-arrow-1.svg";
 import RightArrow2 from "../assets/icons/right-arrow-2.svg";
 import RightArrow3 from "../assets/icons/right-arrow-3.svg";
 import { Space } from "../types";
-import { useNavigate } from "react-router-dom";
-import { useSpaceStore } from "../store/useSpaceStore";
+// import { useNavigate } from "react-router-dom";
+// import { useSpaceStore } from "../store/useSpaceStore";
 import { useState } from "react";
 
 interface SpaceCardProps {
@@ -14,18 +14,18 @@ interface SpaceCardProps {
 }
 
 const SpaceCard = ({ space }: SpaceCardProps) => {
-  const navigate = useNavigate();
-  const setSelectedSpaceId = useSpaceStore((state) => state.setSelectedSpaceId);
+  // const navigate = useNavigate();
+  // const setSelectedSpaceId = useSpaceStore((state) => state.setSelectedSpaceId);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleSpaceClick = (id: string) => {
-    if (id && setSelectedSpaceId) {
-      setSelectedSpaceId(id);
-      navigate(`/space-details/${id}`);
-    }
-  };
+  // const handleSpaceClick = (id: string) => {
+  //   if (id && setSelectedSpaceId) {
+  //     setSelectedSpaceId(id);
+  //     navigate(`/space-details/${id}`);
+  //   }
+  // };
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -104,7 +104,7 @@ const SpaceCard = ({ space }: SpaceCardProps) => {
         </div>
         <div
           className="ourSpaceButton discountBox"
-          onClick={() => handleSpaceClick(space.id)}
+          // onClick={() => handleSpaceClick(space.id)}
         >
           <div className="discountBox">
             <div className="discountDetailsBox">
