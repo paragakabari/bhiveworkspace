@@ -1,7 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const API_URL = "http://localhost:9090/data";
+let API_URL;
+
+if (import.meta.env.MODE === "production") {
+  API_URL = import.meta.env.VITE_API_URL_PROD;
+} else {
+  API_URL = import.meta.env.VITE_API_URL_LOCAL;
+}
 
 export const useSpaces = () =>
   useQuery({
