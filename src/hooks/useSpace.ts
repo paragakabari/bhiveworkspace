@@ -1,20 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-let API_URL;
-
-if (import.meta.env.MODE === "production") {
-  API_URL = import.meta.env.VITE_API_URL_PROD;
-} else {
-  API_URL = import.meta.env.VITE_API_URL_LOCAL;
-}
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const useSpaces = () =>
   useQuery({
     queryKey: ["spaces"],
     queryFn: async () => {
-      const { data } = await axios.get(`${API_URL}`);
-      return data;
+      const { data } = await axios.get(`${API_URL}/data.json`);
+      return data.data;
     },
   });
 
@@ -23,7 +17,7 @@ export const useSpaceDetails = (spaceId: string) =>
     queryKey: ["spaceDetails", spaceId],
     queryFn: async () => {
       const { data } = await axios.get(`${API_URL}/${spaceId}`);
-      return data;
+      return data.data;
     },
     enabled: !!spaceId,
   });
