@@ -1,0 +1,43 @@
+@import "../../styles/index.scss";
+
+.mainHeader {
+  background-color: $header-bg;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0px;
+    color: white;
+    @include breakpoint("lg-max") {
+      padding: 24px 60px;
+    }
+
+    @include breakpoint("md-max") {
+      padding: 24px 40px;
+    }
+
+    @include breakpoint("sm-max") {
+      padding: 18px 0;
+    }
+
+    .logo {
+      cursor: pointer;
+      img {
+        height: 40px;
+        width: 100%;
+      }
+    }
+
+    .callBox {
+      border: 1px solid $orange-border-color;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 4px 4px 14px 0px #0000000f;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../styles/index.scss";
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  font-size: 14px;
+  background: #222e34;
+  gap: 20px;
+  @include breakpoint("sm-max") {
+    flex-wrap: wrap;
+  }
+
+  span {
+    color: #dddddd;
+    @include text14-meduim;
+    font-weight: 500;
+  }
+}
