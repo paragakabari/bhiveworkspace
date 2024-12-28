@@ -1,14 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
+import { Suspense, lazy } from "react";
 import DefaultLayout from "./defaultLayout";
-import HomePage from "../components/HomePage";
-import SpaceDetailsPage from "../components/SpaceDetailsPage";
+
+const HomePage = lazy(() => import("../components/HomePage"));
+const SpaceDetailsPage = lazy(() => import("../components/SpaceDetailsPage"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <DefaultLayout>
-        <HomePage />
+        <Suspense fallback={<div>Loading...</div>}>
+          <HomePage />
+        </Suspense>
       </DefaultLayout>
     ),
     errorElement: <></>,
@@ -17,7 +21,9 @@ export const router = createBrowserRouter([
     path: "/space-details/:id",
     element: (
       <DefaultLayout>
-        <SpaceDetailsPage />
+        <Suspense fallback={<div>Loading...</div>}>
+          <SpaceDetailsPage />
+        </Suspense>
       </DefaultLayout>
     ),
   },
